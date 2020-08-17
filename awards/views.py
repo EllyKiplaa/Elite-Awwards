@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
+
 def index(request,**kwargs):
     projects=Project.objects.all()[::-1]
     proj_upload=ProjectUploadForm(request.POST, request.FILES)
@@ -68,7 +69,7 @@ def details(request, id):
 
 def search_title(request):
     if request.method == "GET":
-        search_term=request.GET.get('search')
+        search_term=request.GET.get('search',None)
         got_projects=Project.objects.filter(title__icontains=search_term)[::-1]
         context ={
             'got_projects':got_projects,
