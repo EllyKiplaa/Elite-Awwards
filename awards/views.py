@@ -1,5 +1,10 @@
 from django.shortcuts import render
-from .models import Project
+from .models import Project,Review
+from .forms import ProjectUploadForm,ProfileUpdateForm, ReviewForm
+from django.http import HttpResponseRedirect
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import ProjectSerializer, ProfileSerializer
 
 
 # Create your views here.
@@ -71,3 +76,9 @@ def search_title(request):
     else:
         message="Looking for something, type it and hit search"
         return render(request, 'results.html', {'message':message})
+
+class Profile_list(APIView):
+    def get(self, request, format=None):
+        all_profile=Profile.objects.all()
+        serializers=ProfileSerializer(all_profile, many=True)
+        return Response(serializers.data)

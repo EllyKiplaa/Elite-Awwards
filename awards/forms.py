@@ -16,4 +16,15 @@ class ProfileUpdateForm(forms.ModelForm):
 class ProjectUploadForm(forms.ModelForm):
     class Meta:
         model=Project
-        exclude=['user']  
+        exclude=['user']
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model=Review
+        fields=('comment', 'design', 'useability', 'content')
+        widget={
+            'comment':forms.Textarea(attrs={"class":"form-control mb-4"}),
+            'design':forms.Select(choices=SCORES,attrs={"class":"form-control mb-4"}),
+            'useability':forms.Select(choices=SCORES,attrs={"class":"form-control mb-4"}),
+            'content':forms.Select(choices=SCORES,attrs={"class":"form-control mb-4"}),
+        }    
