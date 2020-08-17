@@ -31,12 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'awards.apps.AwardsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap4',
+    'pyuploadcare',
 ]
 
 MIDDLEWARE = [
@@ -67,6 +70,10 @@ TEMPLATES = [
     },
 ]
 
+UPLOADCARE = {
+    'pub_key': 'c5f7c994d8460646b8e2',
+    'secret': '0484ef1e1495e46e4ab2',
+}
 WSGI_APPLICATION = 'awardsapp.wsgi.application'
 
 
