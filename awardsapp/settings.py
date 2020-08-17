@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap4',
     'pyuploadcare',
-    'rest_framework'
+    'rest_framework',
+    'registration',
 ]
 
 MIDDLEWARE = [

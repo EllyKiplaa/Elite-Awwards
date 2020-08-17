@@ -1,9 +1,11 @@
 from . import views
 from django.conf.urls import url
+from django.contrib.auth.views import LoginView,  LogoutView
+
+
 
 urlpatterns=[
     url(r'^$', views.index, name='homepage'),
-    url(r'^api-auth/', include('rest_framework.urls')),
     url(r'^profile/$', views.myProfile, name='profile'),
     url(r'^search/$', views.search_title, name='search_title'),
     url(r'^details/(\d+)$', views.details, name='details'),

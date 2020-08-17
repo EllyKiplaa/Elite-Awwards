@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializer import ProjectSerializer, ProfileSerializer
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -82,3 +83,10 @@ class Profile_list(APIView):
         all_profile=Profile.objects.all()
         serializers=ProfileSerializer(all_profile, many=True)
         return Response(serializers.data)
+
+class Project_list(APIView):
+    def get(self,request,format=None):
+        all_projects=Project.objects.all()
+        serializers=ProjectSerializer(all_projects, many=True)
+        return Response(serializers.data)
+
