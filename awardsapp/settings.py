@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'pyuploadcare',
     'rest_framework',
+    'pyuploadcare.dj',
     'registration',
 ]
 
