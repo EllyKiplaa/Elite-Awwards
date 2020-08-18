@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
-
+@login_required(login_url='/accounts/login/')
 def index(request,**kwargs):
     projects=Project.objects.all()[::-1]
     proj_upload=ProjectUploadForm(request.POST, request.FILES)
@@ -64,7 +64,7 @@ def details(request, id):
         'review_form':review_form,
         'proj_reviews':proj_reviews,
     }
-    return render(request, 'details.html',locals())
+    return render(request, 'proj_details.html',locals())
 
 
 def search_title(request):
