@@ -5,8 +5,8 @@
 <!-- review Modal -->
 <div class="modal fade" id="reviewForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
-  <div class="modal-content">
-    <div class="modal-header">
+  <div class="modal-content" style= "background-color:bisque;">
+    <div class="modal-header" style= "background-color:bisque;">
       <h5 class="modal-title" id="exampleModalLabel">Post an image</h5>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -49,21 +49,21 @@
 
     </div>
     <div class="col-md-8">
-      {%if proj_reviews%}
-      {%for proj_review in proj_reviews%}
+      {%if project_reviews%}
+      {%for project_review in project_reviews%}
       <div class="card mb-3" style="max-width: 540px;">
         <div class="row no-gutters">
           <div class="col-md-4">
-            <img src="{{proj_review.user.profile.avi.cdn_url}}" class="card-img" alt="...">
+            <img src="{{project_review.user.profile.avi.cdn_url}}" class="card-img" alt="...">
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">{{proj_review.user.username}}</h5>
-              <p class="card-text"><em>{{proj_review.comment}}</em></p>
+              <h5 class="card-title">{{project_review.user.username}}</h5>
+              <p class="card-text"><em>{{project_review.comment}}</em></p>
               <h5>Ratings:</h5>
-              <p class="card-text">Design: {{proj_review.design}}</p>
-              <p class="card-text">Useability: {{proj_review.useability}}</p>
-              <p class="card-text">Content: {{proj_review.content}}</p>
+              <p class="card-text">Design: {{project_review.design}}</p>
+              <p class="card-text">Useability: {{project_review.useability}}</p>
+              <p class="card-text">Content: {{project_review.content}}</p>
             </div>
           </div>
         </div>

@@ -32,19 +32,22 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="https://images.unsplash.com/photo-1511882085048-714ac60a555e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="First slide" height="600">
+      <img class="d-block w-100 h-3" src="https://images.unsplash.com/photo-1540569876033-6e5d046a1d77?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="First slide" height="500">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://images.unsplash.com/photo-1574007217824-4d3e3fae6aa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" height="600">
+      <img class="d-block w-100 h-3" src="https://images.unsplash.com/photo-1593640495481-2fa682ab2297?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" height="500">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://images.unsplash.com/photo-1503327431567-3ab5e6e79140?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80" alt="Third slide" height="600">
+      <img class="d-block w-100 h-3" src="https://images.unsplash.com/photo-1589686548396-d1eb4e599835?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Third slide" height="500">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://images.unsplash.com/photo-1516315720917-231ef9acce48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80" alt="Third slide" height="600">
+      <img class="d-block w-100 h-3" src="https://images.unsplash.com/photo-1516315720917-231ef9acce48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80" alt="Third slide" height="500">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://images.unsplash.com/photo-1512233863483-299ac6565a96?ixlib=rb-1.2.1&auto=format&fit=crop&w=1904&q=80" alt="Third slide" height="600">
+      <img class="d-block w-100 h-3" src="https://images.unsplash.com/photo-1512233863483-299ac6565a96?ixlib=rb-1.2.1&auto=format&fit=crop&w=1904&q=80" alt="Third slide" height="500">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100 h-3" src="https://images.unsplash.com/photo-1427751840561-9852520f8ce8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80" alt="Third slide" height="500">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -56,23 +59,18 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-
-<div class="container-fluid">
+<div class="container-fluid" style='background-color: blanchedalmond;'>
   <div class="row">
     {%for project in projects %}
       <div class="card m-4" style="width: 18rem;">
-        <a href="{% url 'details' project.id %}"><img class="card-img-top" src="{{project.landing.cdn_url}}" alt="Card image cap"></a>
+        <a href="{% url 'details' project.id %}"><img class="card-img-top" src="{{project.image.cdn_url}}" alt="Card image cap"></a>
         <div class="card-body">
           <h5 class="card-title">{{project.title}}</h5>
           <p class="card-text">Upload by <b>{{project.user.username}}</b></p>
           <a href="{{project.live_site}}" target="_blank" class="btn btn-primary">Visit Site</a>
-
         </div>
       </div>
     {%endfor%}
   </div>
 </div>
-<link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
-<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
 {%endblock%}

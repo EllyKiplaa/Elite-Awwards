@@ -4,7 +4,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: center;">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="{%url 'homepage'%}">Home</a>
@@ -16,6 +16,7 @@
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#uploadForm">Submit Your Site!</a>
         </li>
+        
         <li class="nav-item">
           <a class="nav-link" href="/logout">Logout</a>
         </li>
@@ -25,8 +26,13 @@
         </li>
         {%endif%}
       </ul>
-      <form class="form-inline my-2 my-lg-0" action="{% url 'search_title'%}">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search">      
-      </form>
+    
+      <div class="search">
+        <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_results' %}">
+            <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search"
+                name="search_user">
+            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
     </div>
   </nav>
