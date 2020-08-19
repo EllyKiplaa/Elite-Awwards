@@ -1,5 +1,5 @@
 from django import forms
-from .models import Profile,Project,Review
+from .models import Profile,Project,Review,ImageProfileForm
 SCORES = [
     (1,1),(2,2),
     (3,3),(4,4),
