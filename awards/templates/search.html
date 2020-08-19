@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+<style>
+    body {
+        background-image: url("https://images.unsplash.com/photo-1593331306639-9f806b073b2e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+{%  block content %}
+{% if users %}
+
+    {% for user in users %}
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="card" style="width: 25rem;">
+                <span>
+                    <img src="{{user.profile.profile_photo.url}}" alt=""
+                        style="border-radius: 50%; width:30px; height:30px; border-color: brown; border-width: 1px;">
+                </span>
+                <hr>
+                <span>{{user.profile.bio}}</span>
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+    {% endfor %}
+
+{% else %}
+
+<p class="text-center">search results no matches</p>
+{% endif %}
+
+{% endblock %}
