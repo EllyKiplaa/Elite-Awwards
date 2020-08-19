@@ -18,6 +18,11 @@ class ProjectUploadForm(forms.ModelForm):
         model=Project
         exclude=['user']
 
+class ImageProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        exclude = ['prof_user','profile_Id']
+
 class ReviewForm(forms.ModelForm):
     class Meta:
         model=Review
