@@ -78,17 +78,20 @@ def details(request, id):
     return render(request, 'details.html',locals())
 
 
-def search_project(request):
-    if 'project' in request.GET and request.GET ["project"]:
-        search_term = request.GET.get("project")
-        searched_projects = Project.search_project_by_title(search_term)
-        message = f'{search_term}'
+def search_results(request):
 
-        return render(request, 'search.html', {"message":message, "projects":searched_projects})
+    if 'project' in request.GET and request.GET["project"]:
+        search_term = request.GET.get("project")
+        searched_project = Project.search_by_title(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"message":message,"projects": searched_project})
 
     else:
-        message = "No search results yet!"
-        return render (request, 'search.html', {"message": message})
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message})
+
+
 @login_required(login_url='/accounts/login/')
 def profile_edit(request):
     current_user = request.user

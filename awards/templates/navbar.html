@@ -7,18 +7,29 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: center;">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="{%url 'homepage'%}">Home</a>
+          <a class="nav-link" href="{%url 'homepage'%}"style="font-family: 'Emblema One', cursive;
+          font-family: 'Sail', cursive;
+          font-family: 'Vast Shadow', cursive;">Home</a>
         </li>
         {%if user.is_authenticated%}
         <li class="nav-item">
-          <a class="nav-link" href="{%url 'profile'%}"><b>{{user.username}}</b></a>
+          <a class="nav-link" href="{%url 'profile'%}"style="font-family: 'Emblema One', cursive;
+          font-family: 'Sail', cursive;
+          font-family: 'Vast Shadow', cursive;"><b>{{user.username}}</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#uploadForm">Submit Your Site!</a>
+          <a class="nav-link" data-toggle="modal" data-target="#uploadForm"style="font-family: 'Emblema One', cursive;
+          font-family: 'Goblin One', cursive;
+          font-family: 'Sail', cursive;
+          font-family: 'Vast Shadow', cursive;">Submit Your Site!</a>
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" href="/logout">Logout</a>
+          <a class="nav-link" href="/logout" style="font-family: 'Emblema One', cursive;
+          font-family: 'Sail', cursive;
+          font-family: 'Vast Shadow', cursive;"style="font-family: 'Emblema One', cursive;
+          font-family: 'Sail', cursive;
+          font-family: 'Vast Shadow', cursive;">Logout</a>
         </li>
         {%else%}
         <li class="nav-item">
@@ -28,10 +39,21 @@
       </ul>
     
       <div class="search">
-        <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_results' %}">
+        <!-- <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_results' %}">
             <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search"
                 name="search_user">
-            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+            
+        </form> -->
+        <form class="navbar-form" role="search" action="{% url 'search_results' %}" >
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="project">
+            <div class="input-group-btn">
+              <button class="btn btn-outline-info my-2 my-sm-0" type="submit"style="font-family: 'Emblema One', cursive;
+              font-family: 'Sail', cursive;
+              font-family: 'Vast Shadow', cursive;">Search</button>
+            </div>
+          </div>
+
         </form>
     </div>
     </div>
