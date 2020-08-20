@@ -1,2 +1,2 @@
 release: python manage.py migrate 
-web: gunicorn awards.wsgi --log-file sou
+web: gunicorn awards.wsgi --log-file 
